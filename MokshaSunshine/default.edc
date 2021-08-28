@@ -9023,6 +9023,7 @@ group { name: "e/fileman/toolbar/default/base";
 						size:			 10;
 						min:		1 1;
 						align:			0.5 0.5;
+            ellipsis: -1;
 						text_class: "button";
 					}
 				}
