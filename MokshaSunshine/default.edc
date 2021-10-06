@@ -1833,6 +1833,11 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					color: 255 255 255 255;
 				}
 			}
+      swallow { "e.background"; clip: "clip";
+				desc { "default";
+				}
+				desc { "hidden"; inherit; hid; }
+			} 
 			part { name: "e.swallow.content";
 				type: SWALLOW;
 				clip_to: "clip";
