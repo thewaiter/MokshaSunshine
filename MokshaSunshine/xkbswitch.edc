@@ -1,0 +1,60 @@
+group { name: "e/modules/xkbswitch/noflag";
+   images.image: "flag.png" COMP;
+   max: 128 128;
+   parts {
+      //~ part { name: "shadow";
+         //~ description { state: "default" 0.0;
+            //~ rel1.to: "base";
+            //~ rel1.offset: -3 -2;
+            //~ rel2.to: "base";
+            //~ rel2.offset: 2 2;
+            //~ image.normal: "img/shadow_square_tiny.png";
+            //~ image.border: 6 6 6 6;
+            //~ fill.smooth: 0;
+         //~ }
+      //~ }
+      part { name: "base"; type: IMAGE; mouse_events: 0;
+         description { state: "default" 0.0;
+            rel1.offset: 3 3;
+            rel2.offset: -4 -4;
+            aspect: 1.0 1.0;
+            image.normal: "flag.png";
+            fill.smooth: 1;
+         }
+      }
+      part { name: "e.text.label"; type: TEXT; mouse_events: 0;
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel1.relative: 0.0 0.5;
+            rel2.to: "base";
+            rel2.relative: 1.0 0.5;
+            color: 190 147 82 255;
+            //~ color_class: "module_label";
+            text { font: "Sans:style=Bold"; size: 9;
+               min: 0 1;
+               //~ text_class: "module_small";
+            }
+            fixed: 0 1;
+         }
+         description { state: "visible" 0.0;
+            inherit: "default" 0.0;
+         }
+      }
+      //~ part { name: "bevel"; mouse_events: 0;
+         //~ description { state: "default" 0.0;
+            //~ rel1.to: "base";
+            //~ rel2.to: "base";
+            //~ image.normal: "img/bevel_out.png";
+            //~ image.border: 1 1 1 1;
+            //~ image.middle: 0;
+            //~ fill.smooth: 0;
+         //~ }
+      //~ }
+      part { name: "event"; type: RECT;
+         description { state: "default" 0.0;
+            color: 0 0 0 0;
+         }
+      }
+   }
+}

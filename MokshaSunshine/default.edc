@@ -87,6 +87,7 @@ collections { /* begin the collection of edje groups that are in this file */
 #include "randr.edc"
 #include "mokshapreview.edc"
 #include "border-icons.edc"
+#include "xkbswitch.edc"
 
 //ELM Support
 #include "elm/access.edc"
