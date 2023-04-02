@@ -221,17 +221,17 @@
    
 #define BASE_ORIENT(POS, IMG)							\
 description {	state: POS 0.0;							\
-				inherit: "default" 0.0;					\
-				image.normal: IMG;						\
+		inherit: "default" 0.0;					\
+		image.normal: IMG;						\
             }
 
 #define ORIENT(POS, OFF1, OFF2)							\
 description {	state: POS 0.0; 						\
-				inherit: "default" 0.0; 				\
-				rel1.relative: 0.01 0.01;				\
-				rel2.relative: 0.99 0.99;				\
-				rel1.offset: OFF1; 						\
-				rel2.offset: OFF2;						\
+		inherit: "default" 0.0; 				\
+		rel1.relative: 0.01 0.01;				\
+		rel2.relative: 0.99 0.99;				\
+		rel1.offset: OFF1; 						\
+		rel2.offset: OFF2;						\
             }
 
 #define ORIENT_PROGRAM(POS)								\
@@ -248,11 +248,11 @@ program { name: POS; 									\
    group {														\
       name: NAME; 												\
       images {													\
-		  image: IMAGE_TOP COMP;								\
-		  image: IMAGE_LEFT COMP;								\
-		  image: IMAGE_RIGHT COMP;								\
-		  image: IMAGE_BOTTOM COMP;								\
-	  }															\
+	  image: IMAGE_TOP COMP;								\
+	  image: IMAGE_LEFT COMP;								\
+	  image: IMAGE_RIGHT COMP;								\
+	  image: IMAGE_BOTTOM COMP;								\
+	}															\
       script { \
 		public message(Msg_Type:type, id, ...) { \
 			new val = getarg(2); \
@@ -280,14 +280,14 @@ program { name: POS; 									\
             BASE_ORIENT("left_bottom", IMAGE_LEFT)				\
             BASE_ORIENT("right", IMAGE_RIGHT)					\
 	    BASE_ORIENT("right_top", IMAGE_RIGHT)				\
-	    BASE_ORIENT("right_bottom", IMAGE_RIGHT)			\
-	    BASE_ORIENT("top", IMAGE_TOP)						\
+	    BASE_ORIENT("right_bottom", IMAGE_RIGHT)				\
+	    BASE_ORIENT("top", IMAGE_TOP)					\
 	    BASE_ORIENT("top_left", IMAGE_TOP)					\
 	    BASE_ORIENT("top_right", IMAGE_TOP)					\
 	    BASE_ORIENT("bottom", IMAGE_BOTTOM)					\
-	    BASE_ORIENT("bottom_left", IMAGE_BOTTOM)			\
-	    BASE_ORIENT("bottom_right", IMAGE_BOTTOM)			\
-         } 														\
+	    BASE_ORIENT("bottom_left", IMAGE_BOTTOM)				\
+	    BASE_ORIENT("bottom_right", IMAGE_BOTTOM)				\
+         } 											\
          part {													\
             name: "e.swallow.content"; 							\
             type: SWALLOW; 										\
@@ -328,11 +328,11 @@ program { name: POS; 									\
       name: NAME; 												\
       data.item: "hidden_state_size" RADCONF_SHELF_HID_SIZE;	\
       images {													\
-		  image: IMAGE_TOP COMP;								\
-		  image: IMAGE_LEFT COMP;								\
-		  image: IMAGE_RIGHT COMP;								\
-		  image: IMAGE_BOTTOM COMP;								\
-	  }															\
+	image: IMAGE_TOP COMP;								\
+	image: IMAGE_LEFT COMP;								\
+	image: IMAGE_RIGHT COMP;								\
+	image: IMAGE_BOTTOM COMP;								\
+      }															\
       parts { 													\
          part { 												\
             name: "base";	 									\
@@ -347,14 +347,14 @@ program { name: POS; 									\
             BASE_ORIENT("left_top", IMAGE_LEFT)					\
             BASE_ORIENT("left_bottom", IMAGE_LEFT)				\
             BASE_ORIENT("right", IMAGE_RIGHT)					\
-			BASE_ORIENT("right_top", IMAGE_RIGHT)				\
-			BASE_ORIENT("right_bottom", IMAGE_RIGHT)			\
-			BASE_ORIENT("top", IMAGE_TOP)						\
-			BASE_ORIENT("top_left", IMAGE_TOP)					\
-			BASE_ORIENT("top_right", IMAGE_TOP)					\
-			BASE_ORIENT("bottom", IMAGE_BOTTOM)					\
-			BASE_ORIENT("bottom_left", IMAGE_BOTTOM)			\
-			BASE_ORIENT("bottom_right", IMAGE_BOTTOM)			\
+	    BASE_ORIENT("right_top", IMAGE_RIGHT)				\
+	    BASE_ORIENT("right_bottom", IMAGE_RIGHT)			\
+	    BASE_ORIENT("top", IMAGE_TOP)						\
+	    BASE_ORIENT("top_left", IMAGE_TOP)					\
+	    BASE_ORIENT("top_right", IMAGE_TOP)					\
+	    BASE_ORIENT("bottom", IMAGE_BOTTOM)					\
+	    BASE_ORIENT("bottom_left", IMAGE_BOTTOM)			\
+	    BASE_ORIENT("bottom_right", IMAGE_BOTTOM)			\
          } 														\
          part {													\
             name: "e.swallow.content"; 							\
