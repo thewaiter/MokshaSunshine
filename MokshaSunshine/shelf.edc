@@ -253,6 +253,18 @@ program { name: POS; 									\
 		  image: IMAGE_RIGHT COMP;								\
 		  image: IMAGE_BOTTOM COMP;								\
 	  }															\
+      script { \
+		public message(Msg_Type:type, id, ...) { \
+			new val = getarg(2); \
+			if ((type == MSG_INT_SET) && (id == 0)) \
+				custom_state(PART:"e.swallow.content", "default", 0.0); \
+			if ((type == MSG_INT_SET) && (id == 1)) \
+				custom_state(PART:"e.swallow.content", "vert", 0.0); \
+			set_state_val(PART:"e.swallow.content", STATE_REL1_OFFSET, val, val); \
+			set_state_val(PART:"e.swallow.content", STATE_REL2_OFFSET, 0 - val, 0 - val); \
+			set_state(PART:"e.swallow.content", "custom", 0.0); \
+		} \
+	} \
       parts { 													\
          part { 												\
             name: "base"; mouse_events:0;										\
@@ -267,33 +279,32 @@ program { name: POS; 									\
             BASE_ORIENT("left_top", IMAGE_LEFT)					\
             BASE_ORIENT("left_bottom", IMAGE_LEFT)				\
             BASE_ORIENT("right", IMAGE_RIGHT)					\
-			BASE_ORIENT("right_top", IMAGE_RIGHT)				\
-			BASE_ORIENT("right_bottom", IMAGE_RIGHT)			\
-			BASE_ORIENT("top", IMAGE_TOP)						\
-			BASE_ORIENT("top_left", IMAGE_TOP)					\
-			BASE_ORIENT("top_right", IMAGE_TOP)					\
-			BASE_ORIENT("bottom", IMAGE_BOTTOM)					\
-			BASE_ORIENT("bottom_left", IMAGE_BOTTOM)			\
-			BASE_ORIENT("bottom_right", IMAGE_BOTTOM)			\
+	    BASE_ORIENT("right_top", IMAGE_RIGHT)				\
+	    BASE_ORIENT("right_bottom", IMAGE_RIGHT)			\
+	    BASE_ORIENT("top", IMAGE_TOP)						\
+	    BASE_ORIENT("top_left", IMAGE_TOP)					\
+	    BASE_ORIENT("top_right", IMAGE_TOP)					\
+	    BASE_ORIENT("bottom", IMAGE_BOTTOM)					\
+	    BASE_ORIENT("bottom_left", IMAGE_BOTTOM)			\
+	    BASE_ORIENT("bottom_right", IMAGE_BOTTOM)			\
          } 														\
          part {													\
             name: "e.swallow.content"; 							\
             type: SWALLOW; 										\
-            description { 										\
-               state: "default" 0.0; 							\
-		   }													\
-			ORIENT("left", 1 1, 0 0)							\
-		   ORIENT("left_top", 1 0, 0 0)							\
-		   ORIENT("left_bottom", 1 0, 0 0)						\
-		   ORIENT("right", 0 1, 0 0)							\
-		   ORIENT("right_top", 0 1, 0 0)						\
-		   ORIENT("right_bottom", 0 1, 0 0)						\
-		   ORIENT("top", 1 1, 0 0)								\
-		   ORIENT("top_left", 1 1,  0 0)						\
-		   ORIENT("top_right", 1 1, 0 0 )						\
-		   ORIENT("bottom", 1 0, 0 0 )							\
-		   ORIENT("bottom_left", 1 0, 0 0)						\
-		   ORIENT("bottom_right", 1 0, 0 -1)					\
+            description { state: "default" 0.0; }					\
+		    ORIENT("top", 1 1, 0 0)								\
+		    ORIENT("top_left", 1 1,  0 0)						\
+		    ORIENT("top_right", 1 1, 0 0 )						\
+		    ORIENT("bottom", 1 0, 0 0 )							\
+		    ORIENT("bottom_left", 1 0, 0 0)						\
+		    ORIENT("bottom_right", 1 0, 0 -1)					\
+	    description { state: "vert" 0.0; }						\
+		    ORIENT("left", 1 1, 0 0)							\
+		    ORIENT("left_top", 1 0, 0 0)							\
+		    ORIENT("left_bottom", 1 0, 0 0)						\
+		    ORIENT("right", 0 1, 0 0)							\
+		    ORIENT("right_top", 0 1, 0 0)						\
+		    ORIENT("right_bottom", 0 1, 0 0)						\
          } 													\
       } 														\
       programs { 												\
