@@ -228,8 +228,7 @@ description {	state: POS 0.0;							\
 #define ORIENT(POS, OFF1, OFF2)							\
 description {	state: POS 0.0; 						\
 		inherit: "default" 0.0; 				\
-		rel1.relative: 0.01 0.01;				\
-		rel2.relative: 0.99 0.99;				\
+		rel.to: "spacer"; \
 		rel1.offset: OFF1; 						\
 		rel2.offset: OFF2;						\
             }
@@ -257,12 +256,12 @@ program { name: POS; 									\
 		public message(Msg_Type:type, id, ...) { \
 			new val = getarg(2); \
 			if ((type == MSG_INT_SET) && (id == 0)) \
-				custom_state(PART:"e.swallow.content", "default", 0.0); \
+				custom_state(PART:"spacer", "default", 0.0); \
 			if ((type == MSG_INT_SET) && (id == 1)) \
-				custom_state(PART:"e.swallow.content", "vert", 0.0); \
-			set_state_val(PART:"e.swallow.content", STATE_REL1_OFFSET, val, val); \
-			set_state_val(PART:"e.swallow.content", STATE_REL2_OFFSET, 0 - val, 0 - val); \
-			set_state(PART:"e.swallow.content", "custom", 0.0); \
+				custom_state(PART:"spacer", "vert", 0.0); \
+			set_state_val(PART:"spacer", STATE_REL1_OFFSET, val, val); \
+			set_state_val(PART:"spacer", STATE_REL2_OFFSET, 0 - val, 0 - val); \
+			set_state(PART:"spacer", "custom", 0.0); \
 		} \
 	} \
       parts { 													\
@@ -288,6 +287,20 @@ program { name: POS; 									\
 	    BASE_ORIENT("bottom_left", IMAGE_BOTTOM)				\
 	    BASE_ORIENT("bottom_right", IMAGE_BOTTOM)				\
          } 											\
+	 part {   													\
+            name: "spacer"; mouse_events:0;										\
+	    type: SPACER; 										\
+            description { 										\
+               state: "default" 0.0; 							\
+	       rel1.offset: 12 12; 								\
+	       rel2.offset: -12 -12; 								\
+            } 													\
+            description { 										\
+               state: "vert" 0.0; 							\
+	       rel1.offset: 12 12; 							\
+	       rel2.offset: -12 -12; 							\
+            }     								\
+	 } 		\
          part {													\
             name: "e.swallow.content"; 							\
             type: SWALLOW; 										\
@@ -298,7 +311,6 @@ program { name: POS; 									\
 		    ORIENT("bottom", 1 0, 0 0 )							\
 		    ORIENT("bottom_left", 1 0, 0 0)						\
 		    ORIENT("bottom_right", 1 0, 0 -1)					\
-	    description { state: "vert" 0.0; }						\
 		    ORIENT("left", 1 1, 0 0)							\
 		    ORIENT("left_top", 1 0, 0 0)							\
 		    ORIENT("left_bottom", 1 0, 0 0)						\
@@ -356,6 +368,20 @@ program { name: POS; 									\
 	    BASE_ORIENT("bottom_left", IMAGE_BOTTOM)			\
 	    BASE_ORIENT("bottom_right", IMAGE_BOTTOM)			\
          } 														\
+	 part {   													\
+            name: "spacer"; mouse_events:0;										\
+	    type: SPACER; 										\
+            description { 										\
+               state: "default" 0.0; 							\
+	       rel1.offset: 12 12; 								\
+	       rel2.offset: -12 -12; 								\
+            } 													\
+            description { 										\
+               state: "vert" 0.0; 							\
+	       rel1.offset: 12 12; 							\
+	       rel2.offset: -12 -12; 							\
+            }     								\
+	 } 		\
          part {													\
             name: "e.swallow.content"; 							\
             type: SWALLOW; 										\
