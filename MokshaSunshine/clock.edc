@@ -4,10 +4,10 @@
 
 group { name: "e/modules/clock/digital";
 	script {
-		public do_seconds, do_24h, tick_timer, horizontal;
+		public do_seconds, do_24h, tick_timer, do_date, horizontal;
 
 		public clock_cb(val) {
-			new year, month, day, yearday, weekday, hour, minute;
+			new year, month, day, yearday, weekday, hour, minute, mul;
 			new Float:second;
 			new v, dosec, do24h, tim;
 			new buf[32], bhour[3], bminute[3], bsecond[4], bampm[3];
@@ -66,6 +66,11 @@ group { name: "e/modules/clock/digital";
 				tim = timer(60.0 - (second), "clock_cb", 1);
 			}
 			set_int(tick_timer, tim);
+			mul = 3;
+			if (get_int(do_date)) mul = 4;
+			set_min_size(10 * mul + 4, 16);
+			set_max_size(20 * mul, 128);
+			emit("e,state,sizing,changed", "");
 		}
 
 		public restart_clock() {
@@ -183,18 +188,20 @@ group { name: "e/modules/clock/digital";
 			signal: "e,state,date,on";
 			source: "e";
 			script {
-            set_state(PART:"time-area", "show-date", 0.0);
-            set_state(PART:"e.text.today", "show-date", 0.0);
-            restart_clock();
+				set_int(do_date, 1);
+				set_state(PART:"time-area", "show-date", 0.0);
+				set_state(PART:"e.text.today", "show-date", 0.0);
+				restart_clock();
 			}
 		}
 		program { name: "today,hide";
 			signal: "e,state,date,off";
 			source: "e";
 			script {
-			set_state(PART:"time-area", "default", 0.0);
-			set_state(PART:"e.text.today", "default", 0.0);
-            restart_clock();
+				set_int(do_date, 0);
+				set_state(PART:"time-area", "default", 0.0);
+				set_state(PART:"e.text.today", "default", 0.0);
+				restart_clock();
 			}
 		}
 
