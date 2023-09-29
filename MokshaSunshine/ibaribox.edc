@@ -181,7 +181,7 @@ group { "e/modules/ibar/menu/item";
 group { "e/modules/ibox/icon";
 	alias: "e/modules/ibar/icon";
 	data.item: "raise_on_hilight" "0";
-	images.image: "led_tiny.png" COMP;
+	images.image: "check_base.png" COMP;
 	parts {
 		rect { "item_clip"; nomouse;
 			desc { "default"; color: VISIBLE; }
