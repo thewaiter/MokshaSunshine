@@ -193,17 +193,37 @@ group { "e/modules/ibox/icon";
 			}
 			desc { "bigger"; }
 		}
-		part { "indicator";
-			desc { "default"; hid;
-				min: 10 10; max: 10 10;
+		part { name: "indicator"; scale;
+			desc { state: "default";
 				rel1.relative: 1.0 1.0;
-				rel1.offset: -5 -5;
+				rel1.offset: -13 -13;
 				rel2.relative: 1.0 1.0;
-				rel2.offset:   -4 -4;
-				image.normal: "led_tiny.png";
-				//~ color_class: "focus";
+				rel2.offset: 0 0;
+				image.normal: "check_base.png";
+				color: 255 255 255 0;
+				vis;
+				offscale;
 			}
-			desc { "visible"; inherit; vis; }
+			desc { state: "visible" 0.0; inherit; vis;
+				color: 255 255 255 196;
+			}
+		}
+		text { "e.text.label"; effect: NONE; nomouse; scale;
+			description { state: "default" 0.0;
+				rel1.relative: 1.0 1.0;
+				rel1.offset: -6 -8;
+				rel2.relative: 1.0 1.0;
+				rel2.offset: -6 -4;
+				color: "#141414FF";
+				min: 128 0;
+				text { font: FNBD; size: 6;
+					min: 1 1;
+					ellipsis: -1;
+					align: 0.5 0.5;
+					text_class: "module_normal";
+				}
+				offscale;
+			}
 		}
 		rect { "urgent_area";
 			desc { "default"; hid; }
