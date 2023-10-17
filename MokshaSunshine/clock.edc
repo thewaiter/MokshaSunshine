@@ -83,11 +83,7 @@ group { name: "e/modules/clock/digital";
 		part { name: "time-area";
 			type: RECT;
 			description { state: "default" 0.0;
-				color: 0 0 0 0;
-				rel1.relative: 0.01 0.0;
-				rel1.offset: 8 0;
-				rel2.relative: 0.99 1.0;
-				rel2.offset: -10 0;
+				visible: 0;
 			}
 			description { state: "show-date" 0.0;
 				inherit: "default" 0.0;
@@ -95,8 +91,6 @@ group { name: "e/modules/clock/digital";
 					relative: 1.0 0.0;
 					to: "e.text.today";
 				}
-				rel1.offset: -28 0;
-				rel2.offset:  28 0;
 			}
 		}
 		part { name: "time";
@@ -112,7 +106,7 @@ group { name: "e/modules/clock/digital";
 					text_class: "clock";
 					size: 14;
 					fit: 1 1;
-					size_range: 9 27;
+					size_range: 9 72;
 					text: "--:--";
 					ellipsis: -1;
 					align: 0.5 0.5;
