@@ -240,7 +240,21 @@ program { name: POS; 									\
           action: STATE_SET POS 0.0; 					\
           target: "base"; 								\
           target: "e.swallow.content"; 					\
-        } 
+        }
+
+#define SIZE_SCRIPT									\
+script {										\
+			public message(Msg_Type:type, id, ...) {			\
+			new val = getarg(2);						\
+			if ((type == MSG_INT_SET) && (id == 0))				\
+				custom_state(PART:"spacer", "default", 0.0);		\
+			if ((type == MSG_INT_SET) && (id == 1))				\
+				custom_state(PART:"spacer", "vert", 0.0);		\
+			set_state_val(PART:"spacer", STATE_REL1_OFFSET, val, val);	\
+			set_state_val(PART:"spacer", STATE_REL2_OFFSET, 0 - val, 0 - val); \
+			set_state(PART:"spacer", "custom", 0.0);			\
+		       }								\
+		}
 
 //Shelf has rounded border, panel doesn't
 #define SHELF(NAME, IMAGE_TOP, IMAGE_LEFT, IMAGE_RIGHT, IMAGE_BOTTOM)  									\
@@ -252,18 +266,7 @@ program { name: POS; 									\
 	  image: IMAGE_RIGHT COMP;								\
 	  image: IMAGE_BOTTOM COMP;								\
 	}															\
-      script { \
-		public message(Msg_Type:type, id, ...) { \
-			new val = getarg(2); \
-			if ((type == MSG_INT_SET) && (id == 0)) \
-				custom_state(PART:"spacer", "default", 0.0); \
-			if ((type == MSG_INT_SET) && (id == 1)) \
-				custom_state(PART:"spacer", "vert", 0.0); \
-			set_state_val(PART:"spacer", STATE_REL1_OFFSET, val, val); \
-			set_state_val(PART:"spacer", STATE_REL2_OFFSET, 0 - val, 0 - val); \
-			set_state(PART:"spacer", "custom", 0.0); \
-		} \
-	} \
+	SIZE_SCRIPT												\
       parts { 													\
          part { 												\
             name: "base"; mouse_events:0;										\
@@ -345,18 +348,7 @@ program { name: POS; 									\
 	image: IMAGE_RIGHT COMP;								\
 	image: IMAGE_BOTTOM COMP;								\
       }															\
-      script { \
-		public message(Msg_Type:type, id, ...) { \
-			new val = getarg(2); \
-			if ((type == MSG_INT_SET) && (id == 0)) \
-				custom_state(PART:"spacer", "default", 0.0); \
-			if ((type == MSG_INT_SET) && (id == 1)) \
-				custom_state(PART:"spacer", "vert", 0.0); \
-			set_state_val(PART:"spacer", STATE_REL1_OFFSET, val, val); \
-			set_state_val(PART:"spacer", STATE_REL2_OFFSET, 0 - val, 0 - val); \
-			set_state(PART:"spacer", "custom", 0.0); \
-		} \
-	} \
+      SIZE_SCRIPT										\
       parts { 													\
          part { 												\
             name: "base"; mouse_events:0;	 									\
@@ -453,18 +445,7 @@ PANEL("e/shelf/squared/base", "shelf_bgs_top.png", "shelf_bgs_left.png", "shelf_
 			image: "shelf_bga_left.png" COMP;
 			image: "shelf_bga_right.png" COMP;
 		}
-		script {
-			public message(Msg_Type:type, id, ...) {
-			new val = getarg(2);
-			if ((type == MSG_INT_SET) && (id == 0))
-				custom_state(PART:"spacer", "default", 0.0);
-			if ((type == MSG_INT_SET) && (id == 1))
-				custom_state(PART:"spacer", "vert", 0.0);
-			set_state_val(PART:"spacer", STATE_REL1_OFFSET, val, val);
-			set_state_val(PART:"spacer", STATE_REL2_OFFSET, 0 - val, 0 - val);
-			set_state(PART:"spacer", "custom", 0.0);
-		       }
-		}
+		SIZE_SCRIPT
 		parts {
 			part { name: "base";
 				mouse_events: 0;
