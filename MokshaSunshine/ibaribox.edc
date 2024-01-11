@@ -202,7 +202,6 @@ group { "e/modules/ibox/icon";
 				image.normal: "check_base.png";
 				color: 255 255 255 0;
 				vis;
-				offscale;
 			}
 			desc { state: "visible" 0.0; inherit; vis;
 				color: 255 255 255 196;
@@ -222,7 +221,6 @@ group { "e/modules/ibox/icon";
 					align: 0.5 0.5;
 					text_class: "module_normal";
 				}
-				offscale;
 			}
 		}
 		rect { "urgent_area";
