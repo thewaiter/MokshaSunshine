@@ -187,7 +187,7 @@ script {										\
     * default shelf and can provide the same data items */
    group {
       name: "e/shelf/invisible/base";
-      //~ data.item: "shaped" "1";
+      data.item: "shaped" "1";
       SIZE_SCRIPT
       parts {
          part {
