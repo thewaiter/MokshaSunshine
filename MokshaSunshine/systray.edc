@@ -183,3 +183,10 @@ programs {
       }
    }
 }
+
+group { name: "e/modules/systray/main/black";
+   inherit: "e/modules/systray/main/default";
+   data.item: "default" "0 0 0";
+   data.item: "inset" "0 0 0";
+   data.item: "plain" "0 0 0";
+}
