@@ -3,7 +3,7 @@ group { name: "e/conf/randr/main";
    parts {
       part { name: "bg"; type: RECT;
          description { state: "default" 0.0;
-			 rel2.offset: -2 -4;
+            rel2.offset: -2 -4;
             color_class: "ilist_item_base";
          }
       }
@@ -16,19 +16,19 @@ group { name: "e/conf/randr/main";
       part { name: "e.swallow.content"; type: SWALLOW;
          clip_to: "clipper";
          description { state: "default" 0.0;
-			STAY_ON("bg")
-			rel1.offset: 3 3;
-			rel2.offset: -4 -4;
-			}
+            STAY_ON("bg")
+            rel1.offset: 3 3;
+            rel2.offset: -4 -4;
+            }
       }
       part { name: "shadow"; type: IMAGE; mouse_events: 0;
          description { state: "default" 0.0;
-			image.normal: "inset_sunk.png";
+            image.normal: "inset_sunk.png";
             image.border: 5 5 5 5;
             image.middle: 0;
             STAY_ON("bg")
-			rel1.offset: -1 -1;
-			rel2.offset: 0 0;
+            rel1.offset: -1 -1;
+            rel2.offset: 0 0;
             fill.smooth: 0;
             color: 255 255 255 255;
          }
