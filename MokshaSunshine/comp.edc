@@ -86,7 +86,7 @@ group { name: "e/comp/screen/overlay/default";
       }
    }
    programs {
-		 program { name: "screensaver_post";
+         program { name: "screensaver_post";
             action: SIGNAL_EMIT "e,state,screensaver,active" "e";
          }
          program {
@@ -512,14 +512,14 @@ group { name: "e/comp/frame/flip/fast";
 
 group { name: "e/comp/frame/popup";
    inherit: "e/comp/frame/default";
-	//images.image: "square_shadow.png" COMP;
+   //images.image: "square_shadow.png" COMP;
    parts {
-	  /*part { name: "shadow";
-		description { state: "default" 0.0;
-			image.normal: "square_shadow.png";
-			color: 0 0 0 60;
-		}
-	} */
+      /*part { name: "shadow";
+        description { state: "default" 0.0;
+            image.normal: "square_shadow.png";
+            color: 0 0 0 60;
+        }
+   } */
       part { name: "focus-clipper";
          description { state: "default";
             color_class: "";
@@ -563,12 +563,12 @@ group { name: "e/comp/frame/default/fast";
 group { name: "e/comp/frame/popup/fast";
    inherit: "e/comp/frame/default/fast";
    parts {
-	 /*  part { name: "shadow";
-		description { state: "default" 0.0;
-			image.normal: "square_shadow.png";
-			color: 0 0 0 60;
-		}
-	}*/
+     /*  part { name: "shadow";
+        description { state: "default" 0.0;
+            image.normal: "square_shadow.png";
+            color: 0 0 0 60;
+        }
+    }*/
       part { name: "focus-clipper";
          description { state: "default";
             color_class: "";

@@ -411,7 +411,7 @@ group { name: "e/pointer/enlightenment/resize_r/color";
 }
 
 group { name: "e/pointer/enlightenment/hand/color";
-		alias: "e/pointer/enlightenment/move/color";
+   alias: "e/pointer/enlightenment/move/color";
    inherit: "e/pointer/enlightenment/default/color";
    images.image: "pager_window.png" COMP;
    parts {

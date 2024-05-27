@@ -73,7 +73,7 @@
 	       offset: OFF_X 0;			\
 	       }				\
 	       image {				\
-	       normal: "button-normal.png";		\
+	       normal: "button-normal.png";	\
 	       border: 7 7 7 7;			\
 	       }				\
 	    }					\
@@ -81,10 +81,10 @@
 	    state: "over" 0.0;			\
 	    inherit: "default" 0.0;		\
 	    color: 255 255 255 255;		\
-	    image.normal: "button-prelight.png";	\
+	    image.normal: "button-prelight.png";\
 	    }					\
 	    description {			\
-	    state: "selected" 0.0;			\
+	    state: "selected" 0.0;		\
 	    inherit: "default" 0.0;		\
 	    color: 255 255 255 255;		\
 	    image.normal: "button-pressed.png";	\
@@ -112,7 +112,7 @@
 			state: "disabled" 0.0;	\
 			inherit: "default" 0.0;	\
 			color: 255 255 255 150;	\
-		}						\
+		}				\
 	 }					\
 	 part {					\
 	 name: NAME"_event_eater";		\
@@ -133,7 +133,6 @@
 	    }					\
 	 }					\
 
-	 
 	 NAV_BUTTON("back",       "icon_left_arrow",  "begin", 5);
 	 NAV_BUTTON("forward",    "icon_right_arrow", "back_bg", 1);
 	 NAV_BUTTON("up",         "icon_up_arrow",    "forward_bg", 10);
@@ -155,23 +154,22 @@
 	    color: 200 0 0 200;
 	    }
 	 }
-			
       }
 
       programs {
 #define NAV_BUTTON_PROG(NAME)					\
-	OVER(NAME"_bg", NAME"_bg")			\
+	OVER(NAME"_bg", NAME"_bg")				\
 	 program {						\
 	 name: NAME"_click";					\
 	 signal: "mouse,down,1";				\
-	 source: NAME"_bg";						\
-	 action: STATE_SET "selected" 0.0;				\
+	 source: NAME"_bg";					\
+	 action: STATE_SET "selected" 0.0;			\
 	 target: NAME"_bg";					\
 	 }							\
 	 program {						\
 	 name: NAME"_unclick";					\
 	 signal: "mouse,up,1";					\
-	 source: NAME"_bg";						\
+	 source: NAME"_bg";					\
 	 action: STATE_SET "default" 0.0;			\
 	 target: NAME"_bg";					\
 	 }							\

@@ -3,8 +3,8 @@
  *	for animated background (the original written) or keep the static one. */
 
 #define BACKGROUND_LIGHT												\
-   images.image: "Morning_light.jpg" COMP;								\
-   data {item: "style" "4";												\
+	images.image: "Morning_light.jpg" COMP;								\
+	data {item: "style" "4";											\
 	item: "noanimation" "1";											\
 		}																\
    parts {																\
@@ -15,9 +15,7 @@
          }																\
       }																	\
    }
-				
-				
-				
+
 #define BACKGROUND_ANIMATED												\
 		images {														\
 			image: "wp_bottom.png" COMP;								\
@@ -109,94 +107,94 @@
 				description { state: "shiny" 0.0;						\
 					inherit: "default" 0.0;								\
 					color: 255 255 255 255;								\
-				}							\
-			}							\
+				}														\
+			}															\
 			part { name: "background_bottom";							\
-				description { state: "default" 0.0;							\
-					image.normal: "wp_bottom.png";							\
-					rel1.to: "background";							\
+				description { state: "default" 0.0;						\
+					image.normal: "wp_bottom.png";						\
+					rel1.to: "background";								\
 					rel1.relative: 0.0 0.42;							\
-				}							\
-			}							\
+				}														\
+			}															\
 			part { name: "background_slogan";							\
-				description { state: "default" 0.0;							\
-					aspect: 1 1;							\
+				description { state: "default" 0.0;						\
+					aspect: 1 1;										\
 					aspect_preference: BOTH;							\
-					image.normal: "wp_slogan.png";							\
+					image.normal: "wp_slogan.png";						\
 					rel1.to: "background_top";							\
 					rel2.to: "background_top";							\
 					rel1.relative: 0.45 0.62;							\
 					rel2.relative: 0.58 1.0;							\
-					color: 255 255 255 0;							\
-				}							\
-				description { state: "visible" 0.0;							\
-					inherit: "default" 0.0;							\
-					color: 255 255 255 255;							\
-				}							\
-			}							\
-			part { name: "background_slogan_events";							\
-				type: RECT;							\
-				mouse_events: 1;							\
-				description { state: "default" 0.0;							\
-					rel1.to: "background_slogan";							\
-					rel2.to: "background_slogan";							\
+					color: 255 255 255 0;								\
+				}														\
+				description { state: "visible" 0.0;						\
+					inherit: "default" 0.0;								\
+					color: 255 255 255 255;								\
+				}														\
+			}															\
+			part { name: "background_slogan_events";					\
+				type: RECT;												\
+				mouse_events: 1;										\
+				description { state: "default" 0.0;						\
+					rel1.to: "background_slogan";						\
+					rel2.to: "background_slogan";						\
 					rel1.relative: 0.0 0.37;							\
 					rel2.relative: 1.0 0.63;							\
-					visible: 1;							\
-					color: 255 255 255 0;							\
-				}							\
-			}							\
-		}							\
-		programs {							\
-			program {							\
-				name: "init";							\
-				signal: "load";							\
-				source: "*";							\
-				script {							\
-					start_timer("event_logo_prog");							\
-				}							\
-			}							\
+					visible: 1;											\
+					color: 255 255 255 0;								\
+				}														\
+			}															\
+		}																\
+		programs {														\
+			program {													\
+				name: "init";											\
+				signal: "load";											\
+				source: "*";											\
+				script {												\
+					start_timer("event_logo_prog");						\
+				}														\
+			}															\
 			program { name: "event_slogan_in";							\
-				signal: "mouse,in";							\
-				source: "background_slogan_events";							\
-				action: STATE_SET "visible" 0.0;							\
-				transition: LINEAR 1.0;							\
+				signal: "mouse,in";										\
+				source: "background_slogan_events";						\
+				action: STATE_SET "visible" 0.0;						\
+				transition: LINEAR 1.0;									\
 				target: "background_slogan";							\
-			}							\
+			}															\
 			program { name: "event_slogan_out";							\
-				signal: "mouse,out";							\
-				source: "background_slogan_events";							\
-				action: STATE_SET "default" 0.0;							\
-				transition: LINEAR 1.0;							\
+				signal: "mouse,out";									\
+				source: "background_slogan_events";						\
+				action: STATE_SET "default" 0.0;						\
+				transition: LINEAR 1.0;									\
 				target: "background_slogan";							\
-			}							\
-			program { name: "event_logo";							\
-				signal: "";							\
-				source: "";							\
+			}															\
+			program { name: "event_logo";								\
+				signal: "";												\
+				source: "";												\
 				action: STATE_SET "shiny" 0.0;							\
-				target: "background_logo_overlay";							\
-				after: "event_logo2";							\
-			}							\
-			program { name: "event_logo2";							\
-				signal: "";							\
-				source: "";							\
+				target: "background_logo_overlay";						\
+				after: "event_logo2";									\
+			}															\
+			program { name: "event_logo2";								\
+				signal: "";												\
+				source: "";												\
 				action: STATE_SET "shiny" 0.0;							\
-				transition: LINEAR 1.0;							\
-				target: "background_logo_overlay2";							\
-				after: "event_logo3";							\
-			}							\
-			program { name: "event_logo3";							\
-				signal: "";							\
-				source: "";							\
-				action: STATE_SET "default" 0.0;							\
-				transition: LINEAR 1.0;							\
-				target: "background_logo_overlay2";							\
-				after: "event_logo4";							\
-			}							\
-			program { name: "event_logo4";							\
-				signal: "";							\
-				source: "";							\
-				action: STATE_SET "default" 0.0;							\
-				target: "background_logo_overlay";							\
+				transition: LINEAR 1.0;									\
+				target: "background_logo_overlay2";						\
+				after: "event_logo3";									\
+			}															\
+			program { name: "event_logo3";								\
+				signal: "";												\
+				source: "";												\
+				action: STATE_SET "default" 0.0;						\
+				transition: LINEAR 1.0;									\
+				target: "background_logo_overlay2";						\
+				after: "event_logo4";									\
+			}															\
+			program { name: "event_logo4";								\
+				signal: "";												\
+				source: "";												\
+				action: STATE_SET "default" 0.0;						\
+				target: "background_logo_overlay";						\
 			}															\
 		}																\

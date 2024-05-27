@@ -1,13 +1,13 @@
-#define CLICK_P(TARGET, SOURCE, STATE_DEF, STATE_PRESS)	\
-program {													\
-	signal: "mouse,down,1"; source: SOURCE;					\
-	action: STATE_SET STATE_PRESS 0.0;						\
-	target: TARGET;											\
-}															\
-program {													\
-	signal: "mouse,up,1"; source: SOURCE;					\
-	action: STATE_SET STATE_DEF 0.0;						\
-	target: TARGET;											\
+#define CLICK_P(TARGET, SOURCE, STATE_DEF, STATE_PRESS) \
+program {                                               \
+   signal: "mouse,down,1"; source: SOURCE;              \
+   action: STATE_SET STATE_PRESS 0.0;                   \
+   target: TARGET;                                      \
+}                                                       \
+program {                                               \
+   signal: "mouse,up,1"; source: SOURCE;                \
+   action: STATE_SET STATE_DEF 0.0;                     \
+   target: TARGET;                                      \
 }
 
 group { name: "e/modules/music-control/icon";
@@ -72,14 +72,14 @@ group { name: "e/modules/music-control/popup";
          }
       }
       part { name: "player_btn_shadow"; mouse_events: 0;
-		  description { state: "default" 0.0;
-			  image.normal: "button-prelight.png";
-			  image.border: 6 6 6 6;
-			  visible: 0;
-			  rel1.to: "player_name";
-			  rel1.offset: 3 -3;
-			  rel2.to: "player_name";
-			  rel2.offset: -2 2;
+          description { state: "default" 0.0;
+            image.normal: "button-prelight.png";
+            image.border: 6 6 6 6;
+            visible: 0;
+            rel1.to: "player_name";
+            rel1.offset: 3 -3;
+            rel2.to: "player_name";
+            rel2.offset: -2 2;
          }
          description { state: "prelight" 0.0;
             inherit: "default" 0.0;
@@ -90,14 +90,14 @@ group { name: "e/modules/music-control/popup";
             image.normal: "button-pressed.png";
             visible: 1;
          }
-	  }
+      }
       part { name: "player_name"; type: TEXT;
          effect: SHADOW BOTTOM;
          description { state: "default" 0;
-			color: 255 255 255 255;
-			color3: 255 255 255 255;
-			color_class: "module_label";
-			text.font: ":style=Bold";
+            color: 255 255 255 255;
+            color3: 255 255 255 255;
+            color_class: "module_label";
+            text.font: ":style=Bold";
             text.size: 10;
             text.text: "Music player";
             rel1.to: "cover_bg";
@@ -107,13 +107,12 @@ group { name: "e/modules/music-control/popup";
             rel2.offset: 0 12;
          }
       }
-      
       part { name: "metadata"; type: TEXTBLOCK;
-		effect: SHADOW BOTTOM;
-         description { state: "default" 0;
-			color: 255 255 255 255;
-			color3: 255 255 255 255;
-			color_class: "module_label";
+          effect: SHADOW BOTTOM;
+          description { state: "default" 0;
+            color: 255 255 255 255;
+            color3: 255 255 255 255;
+            color_class: "module_label";
             text {
                style: "music_control_metadata_style";
                text: "Song Title";
@@ -125,14 +124,14 @@ group { name: "e/modules/music-control/popup";
          }
       }
       part { name: "prev_btn_shadow"; mouse_events: 0;
-		  description { state: "default" 0.0;
-			  image.normal: "button-prelight.png";
-			  image.border: 6 6 6 6;
-			  visible: 0;
-			  rel1.to: "previous_btn";
-			  rel1.offset: -4 -4;
-			  rel2.to: "previous_btn";
-			  rel2.offset: 3 3;
+          description { state: "default" 0.0;
+            image.normal: "button-prelight.png";
+            image.border: 6 6 6 6;
+            visible: 0;
+            rel1.to: "previous_btn";
+            rel1.offset: -4 -4;
+            rel2.to: "previous_btn";
+            rel2.offset: 3 3;
          }
          description { state: "prelight" 0.0;
             inherit: "default" 0.0;
@@ -143,7 +142,7 @@ group { name: "e/modules/music-control/popup";
             image.normal: "button-pressed.png";
             visible: 1;
          }
-	  }
+      }
       part { name: "previous_btn";
          description { state: "default" 0;
             FIXED_SIZE(24,24)
@@ -155,14 +154,14 @@ group { name: "e/modules/music-control/popup";
          }
       }
       part { name: "play_btn_shadow"; mouse_events: 0;
-		  description { state: "default" 0.0;
-			  image.normal: "button-prelight.png";
-			  image.border: 6 6 6 6;
-			  visible: 0;
-			  rel1.to: "play_btn";
-			  rel1.offset: -4 -4;
-			  rel2.to: "play_btn";
-			  rel2.offset: 3 3;
+          description { state: "default" 0.0;
+            image.normal: "button-prelight.png";
+            image.border: 6 6 6 6;
+            visible: 0;
+            rel1.to: "play_btn";
+            rel1.offset: -4 -4;
+            rel2.to: "play_btn";
+            rel2.offset: 3 3;
          }
          description { state: "prelight" 0.0;
             inherit: "default" 0.0;
@@ -173,7 +172,7 @@ group { name: "e/modules/music-control/popup";
             image.normal: "button-pressed.png";
             visible: 1;
          }
-	  }
+      }
       part { name: "play_btn";
          description { state: "default" 0;
             FIXED_SIZE(24,24)
@@ -189,14 +188,14 @@ group { name: "e/modules/music-control/popup";
          }
       }
       part { name: "next_btn_shadow"; mouse_events: 0;
-		  description { state: "default" 0.0;
-			  image.normal: "button-prelight.png";
-			  image.border: 6 6 6 6;
-			  visible: 0;
-			  rel1.to: "next_btn";
-			  rel1.offset: -4 -4;
-			  rel2.to: "next_btn";
-			  rel2.offset: 3 3;
+          description { state: "default" 0.0;
+            image.normal: "button-prelight.png";
+            image.border: 6 6 6 6;
+            visible: 0;
+            rel1.to: "next_btn";
+            rel1.offset: -4 -4;
+            rel2.to: "next_btn";
+            rel2.offset: 3 3;
          }
          description { state: "prelight" 0.0;
             inherit: "default" 0.0;
@@ -207,7 +206,7 @@ group { name: "e/modules/music-control/popup";
             image.normal: "button-pressed.png";
             visible: 1;
          }
-	  }
+      }
       part { name: "next_btn";
          description { state: "default" 0;
             FIXED_SIZE(24,24)
@@ -221,16 +220,16 @@ group { name: "e/modules/music-control/popup";
       }
    }
    programs {
-	  OVER_P("player_btn_shadow", "player_name", "default", "prelight")
-	  OVER_P("prev_btn_shadow", "previous_btn", "default", "prelight")
-	  OVER_P("play_btn_shadow", "play_btn", "default", "prelight")
-	  OVER_P("next_btn_shadow", "next_btn", "default", "prelight")
-	  
-	  CLICK_P("player_btn_shadow", "player_name", "default", "selected")
-	  CLICK_P("prev_btn_shadow", "previous_btn", "default", "selected")
-	  CLICK_P("play_btn_shadow", "play_btn", "default", "selected")
-	  CLICK_P("next_btn_shadow", "next_btn", "default", "selected")
-	   
+      OVER_P("player_btn_shadow", "player_name", "default", "prelight")
+      OVER_P("prev_btn_shadow", "previous_btn", "default", "prelight")
+      OVER_P("play_btn_shadow", "play_btn", "default", "prelight")
+      OVER_P("next_btn_shadow", "next_btn", "default", "prelight")
+
+      CLICK_P("player_btn_shadow", "player_name", "default", "selected")
+      CLICK_P("prev_btn_shadow", "previous_btn", "default", "selected")
+      CLICK_P("play_btn_shadow", "play_btn", "default", "selected")
+      CLICK_P("next_btn_shadow", "next_btn", "default", "selected")
+
       program {
          signal: "mouse,clicked,*"; source: "previous_btn";
          action: SIGNAL_EMIT "btn,clicked" "previous";
