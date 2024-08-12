@@ -14,9 +14,7 @@ group { name: "e/modules/notification/logo";
              rel2.relative: 0.8 1.15;
          }
       }
-      part 
-          {
-          name: "e.text.counter";
+      part { name: "e.text.counter";
           mouse_events: 0;
           type: TEXT;
           scale: 1;
@@ -24,14 +22,13 @@ group { name: "e/modules/notification/logo";
           description 
           {
             rel.to: "base";
-            rel2.offset: 0 1;
+            rel2.offset: 0 4;
             state: "default" 0.0;
             color: 255 255 255 255;
             color3: 0 0 0 32;
             color_class: "module_label";
             visible: 1;
-            text 
-            {
+            text {
                 text: "";
                 font: "Sans:style=Bold";
                 size: 8;
@@ -39,42 +36,38 @@ group { name: "e/modules/notification/logo";
                 align: 1.0 1.0;
                 ellipsis: -1;
              }
-            }
           }
+      }
    }
-   programs {  
-    program
-          {
+   programs {
+      program {
            signal: "stop";
            source: "";
            action: STATE_SET "default" 0.0;
            target: "base";
-          }
-    program
-          {
+      }
+      program {
            signal: "blink";
            source: "";
            action: STATE_SET "default" 0.0;
            after: "down";
            target: "base";
-          }
-    program
-          {
+      }
+      program {
            name: "normal";
            action: STATE_SET "default" 0.0;
            target: "base";
            after: "down";
            transition: DECELERATE 0.3;
-          }
-    program
-          {
+      }
+      program {
            name: "down";
            action: STATE_SET "move_down" 0.0;
            target: "base";
            after: "normal";
            transition: ACCELERATE 0.1;
-          } 
-    }
+      }
+   }
 } 
 
 group { name: "e/modules/notification/main";
@@ -82,8 +75,8 @@ group { name: "e/modules/notification/main";
    images.image: "sym_close_light_normal.png" COMP;
    images.image: "sym_close_light_selected.png" COMP;
    data.item: "app_icon_max" "48 48";
-   
-   styles {   
+
+   styles {
       style { name: "notification_style_nowrap";
          base: "font=Sans font_size=10 align=left color=#ffff style=shadow,bottom shadow_color=#00000080 wrap=none text_class=notification_body";
          tag:  "subject"  "+ text_class=module_large style=glow color=#3399ffff glow_color=#3399ff18 align=center glow2_color=#3399ff12";
@@ -109,7 +102,7 @@ group { name: "e/modules/notification/main";
          tag:  "a" ""; // links not supported
       }
    }
-   
+
 parts {
       part { "clip"; type: RECT;
          scale: 1;
@@ -203,9 +196,11 @@ parts {
             align: 0.0 0.0;
             aspect: 1.0 1.0; aspect_preference: BOTH;
             rel1.to_x: "base";
+            rel1.relative: 1.0 0.0;
             rel1.to_y: "notification.text.title";
-            rel1.offset: 12 0;
+            rel1.offset: -20 0;
             rel2.to: "notification.text.title";
+            rel2.relative: 1.0 0.0;
             rel2.offset: 12 -1;
             rel2.relative: 0.0 1.0;
             min: 15 15;
@@ -220,7 +215,7 @@ parts {
          description { state: "default" 0.0;
             rel1.to_x: "notification.swallow.app_icon";
             rel1.relative: 1.0 0.0;
-            rel1.offset: 4 12;
+            rel1.offset: 4 15;
             rel2.relative: 0.0 0.0;
             rel2.to_x: "e.event.close";
             rel2.offset: -5 12;
@@ -280,19 +275,18 @@ parts {
       part { name: "e.event.close"; type: RECT;
          scale: 1;
          description { state: "default" 0.0;
-            rel1.relative: 1.0 0.0;
-            rel1.offset: -13 12;
+            rel1.relative: 0.0 0.0;
+            rel1.offset: 15 12;
             rel2.to: "base";
-            rel2.relative: 1.0 0.0;
-            rel2.offset: -13 12;
-            align: 1.0 0.0;
+            rel2.relative: 0.0 0.0;
+            align: 0.0 0.0;
             min: 15 15;
             color: 0 0 0 0;
             fixed: 1 1;
          }
       }
     }
-     programs {
+   programs {
       program {
          signal: "mouse,down,1"; source: "e.event.close";
          action: STATE_SET "selected" 0.0;
