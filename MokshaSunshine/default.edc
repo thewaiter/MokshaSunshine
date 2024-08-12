@@ -1398,7 +1398,7 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				type: SWALLOW;
 				mouse_events: 0;
 				description { state: "default" 0.0;
-					min: 210 150;
+					min: 210 210;
 					rel1.offset: 4 4;
 					rel2 {
 						relative: 0.5 1;
@@ -1540,7 +1540,7 @@ group { name: "e/pointer/enlightenment/rotate/color";
 						to_y: "e.text.description";
 					}
 					rel2 {
-						offset: -50 24;
+						offset: -50 -4;
 						to_y: "e.text.description";
 					}
 					box { layout: "horizontal";
