@@ -218,7 +218,7 @@ group { name: "e/modules/battery/main";
             rel2.to_y: "pwr";
             color: 255 255 255 255;
             //color_class: "module_label";
-            text { font: "Sans"; size: 7;
+            text { font: "Sans"; size: 8;
                //min: 1 1
                fit: 1 0;
                ellipsis: -1;
@@ -239,12 +239,17 @@ group { name: "e/modules/battery/main";
             rel2.to: "bg";
             color: 255 255 255 255;
             //color_class: "module_label";
-            text { font: "Sans"; size: 6;
+            text { font: "Sans"; size: 8;
                //min: 0 1;
                fit: 1 0;
                ellipsis: -1;
                text_class: "module_small";
             }
+         }
+      }
+      part { name: "e.text.health"; type: TEXT; mouse_events: 0;
+         description { state: "default" 0.0;
+            visible: 0;
          }
       }
       part { name: "over"; type: RECT;
@@ -335,7 +340,7 @@ group { name: "e/modules/battery/popup";
          effect: SHADOW BOTTOM;
          scale: 1;
          description { state: "default" 0.0;
-            rel1.relative: 1.0 0.5;
+            rel1.relative: 1.0 0.15;
             rel1.to_x: "e.swallow.battery";
             color: 255 255 255 255;
             color3: 255 255 255 255;
@@ -347,6 +352,37 @@ group { name: "e/modules/battery/popup";
                text_class: "module_normal";
             }
          }
+      }
+      part {
+            name: "separator"; nomouse;
+            description { state: "default" 0.0;
+              rel1.relative: 1.0 0.5;
+              rel1.to_x: "e.swallow.battery";
+              rel1.to_y: "e.swallow.battery";
+              rel1.offset: 0 -4;
+              image.normal: "menu_sep.png";
+              image.border: 2 2 2 2;
+              fill.smooth: 0;
+              min: 2 2;
+              max: 99999 2;
+            }
+         }
+      part {
+            name: "e.text.health";
+            type: TEXT;
+            scale: 1;
+            description { state: "default" 0.0;
+              rel1.relative: 1.0 0.75;
+              rel1.to_x: "e.swallow.battery";
+              rel1.to_y: "e.swallow.battery";
+              color: 24 24 24 255;
+              text { font: "Sans"; size: 8;
+                text: "health";
+                min: 1 1;
+                ellipsis: -1;
+                text_class: "module_normal";
+              }
+            }
       }
    }
 }
