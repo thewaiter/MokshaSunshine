@@ -2,24 +2,24 @@
    group { name: _NAME; \
       inherit: _SRC; \
       parts { \
-         part { name: "base"; type: RECT; mouse_events: 0;	\
-         description { state: "default" 0.0;	\
+         part { name: "base"; type: RECT; mouse_events: 0; \
+         description { state: "default" 0.0; \
             color: 255 255 255 255;	\
-            color_class: "ilist_item_odd_base";	\
-         }	\
-      }	\
-      part { name: "ilist_sel_SH"; mouse_events: 0;	\
-		description { state: "default" 0.0;	\
-			STAY_ON("base")	\
-			image.normal: "selected.png";	\
-			image.border: 2 2 2 2; /*left right top bottom*/	\
-			visible: 0;	\
-		}	\
-		description { state: "selected" 0.0;	\
-			inherit: "default" 0.0;	\
-			visible: 1;	\
-		}	\
-      }	\
+            color_class: "ilist_item_odd_base"; \
+         } \
+      } \
+      part { name: "ilist_sel_SH"; mouse_events: 0; \
+        description { state: "default" 0.0; \
+            STAY_ON("base") \
+            image.normal: "selected.png"; \
+            image.border: 2 2 2 2; /*left right top bottom*/ \
+            visible: 0; \
+        } \
+        description { state: "selected" 0.0; \
+            inherit: "default" 0.0;	\
+            visible: 1;	\
+         } \
+      } \
       } \
    }
 #define COMPRESS(_NAME, _SRC) \
@@ -116,24 +116,24 @@
                text.min: 0 1; \
             } \
          } \
-         part { name: "base"; type: RECT; mouse_events: 0;	\
-         description { state: "default" 0.0;	\
-            color: 255 255 255 255;	\
-            color_class: "ilist_item_odd_base";	\
-         }	\
-      }	\
-      part { name: "ilist_sel_SH"; type: IMAGE; mouse_events: 0;	\
-		description { state: "default" 0.0;	\
-			STAY_ON("base")	\
-			image.normal: "selected.png";	\
-			image.border: 2 2 2 2; /*left right top bottom*/	\
-			visible: 0;	\
-		}	\
-		description { state: "selected" 0.0;	\
-			inherit: "default" 0.0;	\
-			visible: 1;	\
-		}	\
-      }	\
+         part { name: "base"; type: RECT; mouse_events: 0; \
+         description { state: "default" 0.0; \
+            color: 255 255 255 255; \
+            color_class: "ilist_item_odd_base"; \
+         } \
+      } \
+      part { name: "ilist_sel_SH"; type: IMAGE; mouse_events: 0; \
+        description { state: "default" 0.0; \
+            STAY_ON("base") \
+            image.normal: "selected.png"; \
+            image.border: 2 2 2 2; /*left right top bottom*/ \
+            visible: 0; \
+        } \
+        description { state: "selected" 0.0; \
+            inherit: "default" 0.0; \
+            visible: 1; \
+         } \
+      } \
       } \
    }
 
@@ -146,10 +146,10 @@ group { name: "elm/genlist/item/group_index/default"; nomouse; program_source: "
    
    parts {
       part { name: "base"; type: RECT;
-		description { state: "default" 0.0;
-			color_class: "ilist_item_header_base";
-		}
-	  }
+        description { state: "default" 0.0;
+          color_class: "ilist_item_header_base";
+        }
+      }
       part { name: "elm.text"; type: TEXT; mouse_events: 0;
          effect: SHADOW BOTTOM;
          scale: 1;
@@ -245,12 +245,12 @@ group { name: "elm/genlist/item/default/default";
    data.item: "treesize" TREEPAD;
    data.item: "flips" "elm.text.flip";
 #define IMGP() \
-	images.image: "selected.png" COMP;
+   images.image: "selected.png" COMP;
    IMGP()
    parts {
 //---------------------------------------------------------------------------
 #define BASEP() \
-      part { name: "event"; type: RECT; mouse_events: 1;\
+      part { name: "event"; type: RECT; mouse_events: 1; \
          description { state: "default" 0.0; \
             color: 0 0 0 0; \
          } \
@@ -259,9 +259,9 @@ group { name: "elm/genlist/item/default/default";
             visible: 0; \
          } \
       } \
-      CLIP_SWITCH("base","base","base","default","selected")	\
+      CLIP_SWITCH("base","base","base","default","selected") \
       part { name: "base"; type: RECT; mouse_events: 0; \
-		clip_to: "base_clip_default";	\
+         clip_to: "base_clip_default"; \
          description { state: "default" 0.0; \
             color_class: "ilist_item_base"; \
          } \
@@ -269,14 +269,14 @@ group { name: "elm/genlist/item/default/default";
             color_class: "ilist_item_odd_base"; \
          } \
       } \
-      part { name: "base_sel"; mouse_events: 0;	\
-		clip_to: "base_clip_selected";	\
-		description { state: "default" 0.0;	\
-			STAY_ON("base")	\
-			image.normal: "selected.png";	\
-			image.border: 2 2 2 2;	\
-		}	\
-	  }		\
+      part { name: "base_sel"; mouse_events: 0; \
+        clip_to: "base_clip_selected"; \
+        description { state: "default" 0.0; \
+            STAY_ON("base") \
+            image.normal: "selected.png"; \
+            image.border: 2 2 2 2; \
+        } \
+      } \
       program { \
          signal: "elm,state,odd"; source: "elm"; \
          action: STATE_SET "odd" 0.0; \
@@ -1452,8 +1452,8 @@ group { name: "elm/genlist/tree/default/default"; nomouse;
          scale: 1; \
          ignore_flags: ON_HOLD; \
          description { state: "default" 0.0; \
-            FIXED_SIZE(9,12)	\
-            STAY_ON("arrow")	\
+            FIXED_SIZE(9,12) \
+            STAY_ON("arrow") \
             image.normal: "menu_arrow_normal.png"; \
          } \
          description { state: "selected" 0.0; \
@@ -1466,16 +1466,16 @@ group { name: "elm/genlist/tree/default/default"; nomouse;
          } \
          description { state: "default" 1.0; \
             inherit: "default" 0.0; \
-            FIXED_SIZE(12,9)	\
+            FIXED_SIZE(12,9) \
             image.normal: "menu_arrow_d_normal.png"; \
          } \
          description { state: "selected" 1.0; \
             inherit: "default" 0.0; \
-            FIXED_SIZE(12,9)	\
+            FIXED_SIZE(12,9) \
             image.normal: "menu_arrow_d_sel.png"; \
          } \
          description { state: "disabled" 1.0; \
-            FIXED_SIZE(12,9)	\
+            FIXED_SIZE(12,9) \
             image.normal: "menu_arrow_d_normal.png"; \
             color: 255 255 255 125; \
          } \
@@ -1485,8 +1485,8 @@ group { name: "elm/genlist/tree/default/default"; nomouse;
          scale: 1; \
          ignore_flags: ON_HOLD; \
          description { state: "default" 0.0; \
-            FIXED_SIZE(9,12)	\
-            STAY_ON("arrow")	\
+            FIXED_SIZE(9,12) \
+            STAY_ON("arrow") \
             image.normal: "menu_arrow_l_normal.png"; \
          } \
          description { state: "selected" 0.0; \
@@ -1499,16 +1499,16 @@ group { name: "elm/genlist/tree/default/default"; nomouse;
          } \
          description { state: "default" 1.0; \
             inherit: "default" 0.0; \
-            FIXED_SIZE(12,9)	\
+            FIXED_SIZE(12,9) \
             image.normal: "menu_arrow_d_normal.png"; \
          } \
          description { state: "selected" 1.0; \
             inherit: "default" 0.0; \
-            FIXED_SIZE(12,9)	\
+            FIXED_SIZE(12,9) \
             image.normal: "menu_arrow_d_sel.png"; \
          } \
          description { state: "disabled" 1.0; \
-            FIXED_SIZE(12,9)	\
+            FIXED_SIZE(12,9) \
             image.normal: "menu_arrow_d_normal.png"; \
             color: 255 255 255 125; \
          } \
@@ -1534,7 +1534,7 @@ group { name: "elm/genlist/tree/default/default"; nomouse;
             rel2.to: "arrow_img_l"; \
             visible: 1; \
          } \
-         description { state: "rtl" 0.0;	\
+         description { state: "rtl" 0.0; \
             visible: 0; \
          } \
       } \
@@ -2370,27 +2370,27 @@ COMPRESS_ODD("elm/genlist/tree_compress_odd/icon_top_text_bottom/default", "elm/
                text.min: 0 1; \
             } \
          } \
-         part { name: "base"; type: RECT; mouse_events: 0;	\
-         description { state: "default" 0.0;	\
-            color: 255 255 255 255;	\
-            color_class: "ilist_item_odd_base";	\
-         }	\
-         description { state: "selected" 0.0;	\
-			color_class: "focus";	\
-		 }	\
+         part { name: "base"; type: RECT; mouse_events: 0; \
+         description { state: "default" 0.0; \
+            color: 255 255 255 255; \
+            color_class: "ilist_item_odd_base"; \
+         } \
+         description { state: "selected" 0.0; \
+            color_class: "focus"; \
+         } \
       }	\
-      part { name: "ilist_sel_SH"; type: IMAGE; mouse_events: 0;	\
-		description { state: "default" 0.0;	\
-			STAY_ON("base")	\
-			image.normal: "selected.png";	\
-			image.border: 2 2 2 2; /*left right top bottom*/	\
-			visible: 0;	\
-		}	\
-		description { state: "selected" 0.0;	\
-			inherit: "default" 0.0;	\
-			visible: 1;	\
-		}	\
-      }	\
+      part { name: "ilist_sel_SH"; type: IMAGE; mouse_events: 0; \
+        description { state: "default" 0.0; \
+            STAY_ON("base") \
+            image.normal: "selected.png"; \
+            image.border: 2 2 2 2; /*left right top bottom*/ \
+            visible: 0; \
+        } \
+        description { state: "selected" 0.0; \
+            inherit: "default" 0.0; \
+            visible: 1; \
+        } \
+      } \
       } \
    }
     
@@ -3017,27 +3017,27 @@ COMPRESS_SUB_ODD("elm/genlist/tree_compress_odd/double_label/default", "elm/genl
                text.min: 0 1; \
             } \
          } \
-         part { name: "base"; type: RECT; mouse_events: 0;	\
-         description { state: "default" 0.0;	\
-            color: 255 255 255 255;	\
-            color_class: "ilist_item_odd_base";	\
-         }	\
-         description { state: "selected" 0.0;	\
-			color_class: "focus";	\
-		 }	\
-      }	\
-      part { name: "ilist_sel_SH"; type: IMAGE; mouse_events: 0;	\
-		description { state: "default" 0.0;	\
-			STAY_ON("base")	\
-			image.normal: "selected.png";	\
-			image.border: 2 2 2 2; /*left right top bottom*/	\
-			visible: 0;	\
-		}	\
-		description { state: "selected" 0.0;	\
-			inherit: "default" 0.0;	\
-			visible: 1;	\
-		}	\
-      }	\
+         part { name: "base"; type: RECT; mouse_events: 0; \
+         description { state: "default" 0.0; \
+            color: 255 255 255 255; \
+            color_class: "ilist_item_odd_base"; \
+         } \
+         description { state: "selected" 0.0; \
+            color_class: "focus"; \
+         } \
+      } \
+      part { name: "ilist_sel_SH"; type: IMAGE; mouse_events: 0; \
+        description { state: "default" 0.0; \
+            STAY_ON("base") \
+            image.normal: "selected.png"; \
+            image.border: 2 2 2 2; /*left right top bottom*/ \
+            visible: 0; \
+        } \
+        description { state: "selected" 0.0; \
+            inherit: "default" 0.0; \
+            visible: 1; \
+        } \
+      } \
       } \
    }
 group { name: "elm/genlist/item/message/default"; nomouse;
@@ -3908,27 +3908,27 @@ group { name: "elm/genlist/item/media/default"; nomouse;
                text.min: 0 1; \
             } \
          } \
-         part { name: "base"; type: RECT; mouse_events: 0;	\
-         description { state: "default" 0.0;	\
-            color: 255 255 255 255;	\
-            color_class: "ilist_item_odd_base";	\
-         }	\
-         description { state: "selected" 0.0;	\
-			color_class: "focus";	\
-		 }	\
-      }	\
-      part { name: "ilist_sel_SH"; type: IMAGE; mouse_events: 0;	\
-		description { state: "default" 0.0;	\
-			STAY_ON("base")	\
-			image.normal: "selected.png";	\
-			image.border: 2 2 2 2; /*left right top bottom*/	\
-			visible: 0;	\
-		}	\
-		description { state: "selected" 0.0;	\
-			inherit: "default" 0.0;	\
-			visible: 1;	\
-		}	\
-      }	\
+         part { name: "base"; type: RECT; mouse_events: 0; \
+         description { state: "default" 0.0; \
+            color: 255 255 255 255; \
+            color_class: "ilist_item_odd_base"; \
+         } \
+         description { state: "selected" 0.0; \
+            color_class: "focus"; \
+         } \
+      } \
+      part { name: "ilist_sel_SH"; type: IMAGE; mouse_events: 0; \
+        description { state: "default" 0.0; \
+            STAY_ON("base") \
+            image.normal: "selected.png"; \
+            image.border: 2 2 2 2; /*left right top bottom*/ \
+            visible: 0; \
+        } \
+        description { state: "selected" 0.0; \
+            inherit: "default" 0.0; \
+            visible: 1; \
+        } \
+      } \
       } \
    }
 ODD("elm/genlist/item_odd/media/default", "elm/genlist/item/media/default")
@@ -5124,27 +5124,27 @@ group { name: "elm/genlist/item_odd_compress/media-preview/default";
                text.min: 0 1; \
             } \
          } \
-         part { name: "base"; type: RECT; mouse_events: 0;	\
-         description { state: "default" 0.0;	\
-            color: 255 255 255 255;	\
-            color_class: "ilist_item_odd_base";	\
-         }	\
-         description { state: "selected" 0.0;	\
-			color_class: "focus";	\
-		 }	\
-      }	\
-      part { name: "ilist_sel_SH"; type: IMAGE; mouse_events: 0;	\
-		description { state: "default" 0.0;	\
-			STAY_ON("base")	\
-			image.normal: "selected.png";	\
-			image.border: 2 2 2 2; /*left right top bottom*/	\
-			visible: 0;	\
-		}	\
-		description { state: "selected" 0.0;	\
-			inherit: "default" 0.0;	\
-			visible: 1;	\
-		}	\
-      }	\
+         part { name: "base"; type: RECT; mouse_events: 0; \
+         description { state: "default" 0.0; \
+            color: 255 255 255 255; \
+            color_class: "ilist_item_odd_base"; \
+         } \
+         description { state: "selected" 0.0; \
+            color_class: "focus"; \
+         } \
+      } \
+      part { name: "ilist_sel_SH"; type: IMAGE; mouse_events: 0; \
+        description { state: "default" 0.0; \
+            STAY_ON("base") \
+            image.normal: "selected.png"; \
+            image.border: 2 2 2 2; /*left right top bottom*/ \
+            visible: 0; \
+        } \
+        description { state: "selected" 0.0; \
+            inherit: "default" 0.0; \
+            visible: 1; \
+        } \
+      } \
       } \
    }
 group { name: "elm/genlist/item/mode/default"; nomouse;
@@ -5449,25 +5449,6 @@ ODD("elm/genlist/tree_odd/mode/default", "elm/genlist/tree/mode/default")
 COMPRESS_MODE("elm/genlist/tree_compress/mode/default", "elm/genlist/tree/mode/default")
 COMPRESS_MODE_ODD("elm/genlist/tree_compress_odd/mode/default", "elm/genlist/tree/mode/default")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #define COMPRESS_EDIT(_NAME, _SRC) \
    group { name: _NAME; \
       inherit: _SRC; \
@@ -5490,7 +5471,7 @@ group { name: "elm/genlist/item/edit/default";
    parts {
       CLIP_SWITCH("base","base","base","default","selected")
       part { name: "base"; type: RECT; mouse_events: 0;
-		clip_to: "base_clip_default";
+        clip_to: "base_clip_default";
          description { state: "default" 0.0;
             color_class: "ilist_item_base";
          }
@@ -5499,20 +5480,20 @@ group { name: "elm/genlist/item/edit/default";
          }
       }
       part { name: "base_sel"; type: RECT; mouse_events: 0;
-		clip_to: "base_clip_selected";
-		description { state: "default" 0.0;
-			STAY_ON("base")
-			color_class: "focus";
-		}
-	  }
-	  part { name: "base_sel_SH"; mouse_events: 0;
-		clip_to: "base_clip_selected";
-		description { state: "default" 0.0;
-			STAY_ON("base_sel")
-			image.normal: "selected.png";
-			image.border: 2 2 2 2;
-		}
-	  }
+        clip_to: "base_clip_selected";
+        description { state: "default" 0.0;
+            STAY_ON("base")
+            color_class: "focus";
+        }
+      }
+      part { name: "base_sel_SH"; mouse_events: 0;
+        clip_to: "base_clip_selected";
+        description { state: "default" 0.0;
+            STAY_ON("base_sel")
+            image.normal: "selected.png";
+            image.border: 2 2 2 2;
+        }
+      }
       program {
          signal: "elm,state,odd"; source: "elm";
          action: STATE_SET "odd" 0.0;
