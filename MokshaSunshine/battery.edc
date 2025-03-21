@@ -219,8 +219,6 @@ group { name: "e/modules/battery/main";
             color: 255 255 255 255;
             //color_class: "module_label";
             text { font: "Sans"; size: 8;
-               //min: 1 1
-               fit: 1 0;
                ellipsis: -1;
                text_class: "module_small";
             }
@@ -240,8 +238,6 @@ group { name: "e/modules/battery/main";
             color: 255 255 255 255;
             //color_class: "module_label";
             text { font: "Sans"; size: 8;
-               //min: 0 1;
-               fit: 1 0;
                ellipsis: -1;
                text_class: "module_small";
             }
