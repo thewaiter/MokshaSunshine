@@ -11,13 +11,14 @@
  * 						 or search me (Duma) on forums.bodhilinux.com  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+efl_version: 1 25;
 data {
 	item: "theme/name"    "Morning Sunshine";
 	item: "theme/version" "beta";
 	item: "theme/author"  "Alberto 'Duma' Verdoja";
 	item: "gtk-theme"     "Morning Sunshine";
 	item: "icon-theme"    "MokshaSunshine";
-	item: "version"       "110";
+	item: "version"       "125";
 }
 
 /// These stuffs can be changed also with Settings -> Look -> Colors, but
