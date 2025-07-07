@@ -700,6 +700,7 @@ group {
 
 	data {
 		item: "shadow" "1";
+		item: "shaped" "1";
 	}
 
 	parts {
