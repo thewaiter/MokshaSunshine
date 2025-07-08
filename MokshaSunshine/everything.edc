@@ -692,7 +692,7 @@
                rel1.relative: 1.0 0.0;
                rel2.to: "clip";
                rel1.offset: 2 3;
-               rel2.offset: -6 -7;
+               rel2.offset: -6 -2;
                /* visible: 0; */
                color: 24 24 24 255;
                text {
@@ -839,7 +839,7 @@
                text {
                   font: "Sans:style";
                   text_source: "e.text.label";
-                  size: 12;
+                  size: 10;
                   min: 0 1;
                   align: 0.5 0.5;
                   text_class: "fileman_icon";
@@ -889,7 +889,7 @@
                color: 0 0 0 255;
                text {
                   font: "Sans:style=Bold";
-                  size: 12;
+                  size: 10;
                   min: 0 1;
                   align: 0.5 0.5;
                   text_class: "fileman_icon";
