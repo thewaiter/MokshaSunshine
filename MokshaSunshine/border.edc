@@ -930,7 +930,6 @@ group {
 				rel1 {
 					to: "e.text.title";
 				}
-
 				rel2 {
 					to: "e.text.title";
 				}
@@ -977,6 +976,7 @@ group {
 
 	data {
 		item: "shadow" "1";
+		item: "shaped" "1";
 	}
 
 	parts {
@@ -1008,13 +1008,11 @@ group {
 					relative: 0.0 0.5;
 					offset: 0 4; 
 				}
-
 				rel2 { 
 					to: "title.area.clip";
 					relative: 1.0 0.5; 
 					offset: -5 0;
 				}
-
 				text {
 					text: "";
 					font: "Sans";
@@ -1036,11 +1034,11 @@ group {
 		BORDER3("top-center-over", 5 23, 9999 23, "top-left", 1.0 0.5, 0 0, "top-right", 0.0 0.5, -1 -2, "bd_top_overm.png", 1.0 1.0, 0.0 1.0, -1 -2)
 
 		MOVE_WINDOW("move-window", 1 22, 9999 22, "top-left", 0.0 0.0, 5 2, "top-right", 1.0 1.0, -7 -1, 255 0 0 0)
-		PART_EVENT_MAP("e.event.titlebar", 1, "move-window")		
+		PART_EVENT_MAP("e.event.titlebar", 1, "move-window")
 		CLIPS("close-clip", 20 18, 20 18, "top-left", 0.0 0.0, 0 0, 0.0 1.0, 30 -8)
 		BUTTONS("button-close", "close-clip", 15 15, "close-clip", "bd_button_close_unfocused.png")
 		PART_EVENT_MAP("e.event.close", 1, "button-close")
-		part { 														
+		part {
 			name: "text_alt";
 			type: TEXT;
 			effect: SOFT_SHADOW BOTTOM;
@@ -1055,7 +1053,6 @@ group {
 				rel1 {
 					to: "e.text.title";
 				}
-
 				rel2 {
 					to: "e.text.title";
 				}
@@ -1101,6 +1098,7 @@ group {
 
 	data {
 		item: "shadow" "1";
+		item: "shaped" "1";
 	}
 
 	parts {
@@ -1168,12 +1166,12 @@ group {
 		PART_EVENT_MAP("e.event.resize.bl", 0, "bottom-left")
 		PART_EVENT_MAP("e.event.resize.b", 0, "bottom-center")
 		PART_EVENT_MAP("e.event.resize.tr", 0, "top-right")
-		PART_EVENT_MAP("e.event.resize.tl", 0, "top-left")		
+		PART_EVENT_MAP("e.event.resize.tl", 0, "top-left")
 		CLIPS("close-clip", 20 18, 20 18, "top-left", 0.0 0.0, 0 0, 0.0 1.0, 30 -8)
 		BUTTONS("button-close", "close-clip", 15 15, "close-clip", "bd_button_close_unfocused.png")
 		PART_EVENT_MAP("e.event.close", 1, "button-close")
 		RESIZE_TOP("resize_t", 1 2, 9999 2, "top-left", 0.0 0.0, 0 0, "top-right", 0.0 0.0, -1 0, 255 0 0 0)
-		part { 														
+		part { 
 			name: "text_alt";
 			type: TEXT;
 			effect: SOFT_SHADOW BOTTOM;
@@ -1188,7 +1186,6 @@ group {
 				rel1 {
 					to: "e.text.title";
 				}
-
 				rel2 {
 					to: "e.text.title";
 				}
@@ -1251,7 +1248,7 @@ group { name: "e/widgets/border/pixel/border";
          description { state: "focused" 0.0;
             inherit: "default" 0.0;
             color: 255 255 255 255;
-			color_class: "focus";
+            color_class: "focus";
          }
       }
       part { name: "bottom"; type: RECT;
@@ -1263,7 +1260,7 @@ group { name: "e/widgets/border/pixel/border";
          description { state: "focused" 0.0;
             inherit: "default" 0.0;
             color: 255 255 255 255;
-			color_class: "focus";
+            color_class: "focus";
          }
       }
       part { name: "left"; type: RECT;
@@ -1275,7 +1272,7 @@ group { name: "e/widgets/border/pixel/border";
          description { state: "focused" 0.0;
             inherit: "default" 0.0;
             color: 255 255 255 255;
-			color_class: "focus";
+            color_class: "focus";
          }
       }
       part { name: "right"; type: RECT;
@@ -1287,7 +1284,7 @@ group { name: "e/widgets/border/pixel/border";
          description { state: "focused" 0.0;
             inherit: "default" 0.0;
             color: 255 255 255 255;
-			color_class: "focus";
+            color_class: "focus";
          }
       }
       part { name: "e.event.resize.tl"; type: RECT;
