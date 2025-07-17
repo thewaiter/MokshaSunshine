@@ -349,36 +349,35 @@ group { name: "e/modules/battery/popup";
             }
          }
       }
-      part {
-            name: "separator"; nomouse;
-            description { state: "default" 0.0;
-              rel1.relative: 1.0 0.5;
-              rel1.to_x: "e.swallow.battery";
-              rel1.to_y: "e.swallow.battery";
-              rel1.offset: 0 -4;
-              image.normal: "menu_sep.png";
-              image.border: 2 2 2 2;
-              fill.smooth: 0;
-              min: 2 2;
-              max: 99999 2;
-            }
+      part { name: "separator";
+         nomouse;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 0.5;
+            rel1.to_x: "e.swallow.battery";
+            rel1.to_y: "e.swallow.battery";
+            rel1.offset: 0 -4;
+            image.normal: "menu_sep.png";
+            image.border: 2 2 2 2;
+            fill.smooth: 0;
+            min: 2 2;
+            max: 99999 2;
          }
-      part {
-            name: "e.text.health";
-            type: TEXT;
-            scale: 1;
-            description { state: "default" 0.0;
-              rel1.relative: 1.0 0.75;
-              rel1.to_x: "e.swallow.battery";
-              rel1.to_y: "e.swallow.battery";
-              color: 24 24 24 255;
-              text { font: "Sans"; size: 8;
-                text: "health";
-                min: 1 1;
-                ellipsis: -1;
-                text_class: "module_normal";
-              }
-            }
+      }
+      part { name: "e.text.health";
+         type: TEXT;
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.relative: 1.0 0.75;
+            rel1.to_x: "e.swallow.battery";
+            rel1.to_y: "e.swallow.battery";
+            color: 24 24 24 255;
+            text { font: "Sans"; size: 8;
+              text: "health";
+              min: 1 1;
+              ellipsis: -1;
+              text_class: "module_normal";
+           }
+         }
       }
    }
 }
