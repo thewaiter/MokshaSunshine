@@ -374,29 +374,29 @@ group { "e/modules/ibox/icon";
 			target: "urgent_area";
 		}
 		program { "ion";
-		signal: "e,state,on"; source: "e";
-		action: STATE_SET "visible" 0.0;
-		target: "indicator";
-		transition: ACCELERATE 0.1;
-	}
-	program { "ioff";
-		signal: "e,state,off"; source: "e";
-		action: STATE_SET "default" 0.0;
-		target: "indicator";
-		transition: DECELERATE 0.1;
-	}
-	program {
-		signal: "e,state,on"; source: "e";
-		action: STATE_SET "visible" 0.0;
-		target: "indicator";
-		transition: ACCELERATE 0.2;
-	}
-	program {
-		signal: "e,state,off"; source: "e";
-		action: STATE_SET "default" 0.0;
-		target: "indicator";
-		transition: DECELERATE 0.8;
-	}
+			signal: "e,state,on"; source: "e";
+			action: STATE_SET "visible" 0.0;
+			target: "indicator";
+			transition: ACCELERATE 0.1;
+		}
+		program { "ioff";
+			signal: "e,state,off"; source: "e";
+			action: STATE_SET "default" 0.0;
+			target: "indicator";
+			transition: DECELERATE 0.1;
+		}
+		program {
+			signal: "e,state,on"; source: "e";
+			action: STATE_SET "visible" 0.0;
+			target: "indicator";
+			transition: ACCELERATE 0.2;
+		}
+		program {
+			signal: "e,state,off"; source: "e";
+			action: STATE_SET "default" 0.0;
+			target: "indicator";
+			transition: DECELERATE 0.8;
+		}
 	}
 }
 
