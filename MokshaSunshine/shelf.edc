@@ -32,7 +32,7 @@ script {										\
    group {
       name: "e/shelf/default/inset";
       alias: "e/shelf/alternate/inset";
-     
+      data.item: "shaped" "1";
       images {
          image: "shelf_inset.png" COMP;
       }
@@ -160,6 +160,7 @@ script {										\
    group {
       name: "e/shelf/default/plain";
       alias: "e/shelf/alternate/plain";
+      data.item: "shaped" "1";
       parts {
          part {
             name: "clip";
@@ -348,6 +349,7 @@ program { name: POS; 									\
 //Shelf has rounded border, panel doesn't
 #define SHELF(NAME, IMAGE_TOP, IMAGE_LEFT, IMAGE_RIGHT, IMAGE_BOTTOM)  									\
    group {														\
+	  data.item: "shaped" "1";									\
       name: NAME; 												\
       images {													\
           image: IMAGE_TOP COMP;								\
@@ -432,15 +434,15 @@ program { name: POS; 									\
       name: NAME; 												\
       data.item: "hidden_state_size" RADCONF_SHELF_HID_SIZE;	\
       images {													\
-        image: IMAGE_TOP COMP;								\
-        image: IMAGE_LEFT COMP;								\
+        image: IMAGE_TOP COMP;									\
+        image: IMAGE_LEFT COMP;									\
         image: IMAGE_RIGHT COMP;								\
         image: IMAGE_BOTTOM COMP;								\
       }															\
-      SIZE_SCRIPT										\
+      SIZE_SCRIPT												\
       parts { 													\
          part { 												\
-            name: "base"; mouse_events:0;	 									\
+            name: "base"; mouse_events:0;	 					\
             description { 										\
                state: "default" 0.0; 							\
                color_class: "shelf_base"; 						\
@@ -461,17 +463,17 @@ program { name: POS; 									\
             BASE_ORIENT("bottom_left", IMAGE_BOTTOM)			\
             BASE_ORIENT("bottom_right", IMAGE_BOTTOM)			\
          }								\
-         part {   													\
-            name: "spacer"; mouse_events:0;										\
+         part {   												\
+            name: "spacer"; mouse_events:0;						\
             type: SPACER; 										\
             description { 										\
                state: "default" 0.0; 							\
                rel1.offset: 12 12; 								\
-               rel2.offset: -12 -12; 								\
+               rel2.offset: -12 -12; 							\
             } 													\
             description { 										\
-               state: "vert" 0.0; 							\
-               rel1.offset: 12 12; 							\
+               state: "vert" 0.0; 								\
+               rel1.offset: 12 12; 								\
                rel2.offset: -12 -12; 							\
             }							\
          }\
@@ -481,8 +483,8 @@ program { name: POS; 									\
             description { 										\
                state: "default" 0.0; 							\
                    }													\
-                   ORIENT("left", 1 1, 0 0)							\
-                   ORIENT("left_top", 1 0, 0 0)						\
+                   ORIENT("left", 1 1, 0 0)								\
+                   ORIENT("left_top", 1 0, 0 0)							\
                    ORIENT("left_bottom", 1 0, 0 0)						\
                    ORIENT("right", 0 1, 0 0)							\
                    ORIENT("right_top", 0 1, 0 0)						\
@@ -505,10 +507,10 @@ program { name: POS; 									\
                    ORIENT_PROGRAM("top")									\
                    ORIENT_PROGRAM("top_left")								\
                    ORIENT_PROGRAM("top_right")								\
-                   ORIENT_PROGRAM("bottom")								\
+                   ORIENT_PROGRAM("bottom")									\
                    ORIENT_PROGRAM("bottom_left")							\
                    ORIENT_PROGRAM("bottom_right")							\
-      } 							\
+      } \
    }   
    
 SHELF("e/shelf/default/base", "shelf_bg_top.png", "shelf_bg_left.png", "shelf_bg_right.png", "shelf_bg.png")
