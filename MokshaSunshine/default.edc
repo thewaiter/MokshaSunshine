@@ -4460,7 +4460,7 @@ group { name: "e/pointer/enlightenment/rotate/color";
    }
    styles {
       style { name: "fileman_icon_name";
-         base: "font=Sans font_size=10 text_class=fileman_icon align=center color=#000000ff wrap=mixed style=shadow,bottom shadow_color=#00000000 align=center ellipsis=1.0";
+         base: "font=Sans font_size=10 text_class=fileman_icon align=center color=#ffffffff wrap=mixed style=soft_shadow,bottom shadow_color=#00000048 align=center ellipsis=1.0";
       }
       style { name: "fileman_icon_name_selected";
          base: "font=Sans font_size=10 text_class=fileman_icon align=center color=#000000ff wrap=mixed style=shadow,bottom shadow_color=#00000000 align=center ellipsis=1.0";
@@ -4489,7 +4489,6 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					fixed: 1 1;
 					rel1.to: "e.text.label";
 					rel2.to: "e.text.label";
-					color: 0 0 0 255;
 					text {
 						style: "fileman_icon_name";
 						align: 0.5 0.0;
@@ -4705,8 +4704,6 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					rel2.to: "label0";
 					rel2.offset: -1 6;
 					visible: 0;
-					color: 224 224 224 255;
-					color3: 0 0 0 64;
 					text {
 						style: "fileman_icon_name_selected";
 						align: 0.5 0.0;
