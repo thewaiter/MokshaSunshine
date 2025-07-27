@@ -4445,8 +4445,8 @@ group { name: "e/pointer/enlightenment/rotate/color";
 	}
 
 	group { name: "e/fileman/default/icon/variable";
-			alias: "e/fileman/desktop/icon/variable";
-			alias: "e/fileman/desktop/icon/fixed";
+		alias: "e/fileman/desktop/icon/variable";
+		alias: "e/fileman/desktop/icon/fixed";
 		images {
 			image: "button-normal.png" COMP;
 			image: "e17_mini_button_shadow2.png" COMP;
@@ -4483,6 +4483,7 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				type: TEXTBLOCK;
 				mouse_events:  0;
 				scale: 1;
+            clip_to: "textmaster";
 				description { state: "default" 0.0;
 					align: 0.5 1.0;
 					fixed: 1 1;
@@ -4501,6 +4502,16 @@ group { name: "e/pointer/enlightenment/rotate/color";
 					visible: 0;
 				}
 			}
+         part { name: "textmaster"; type: RECT;
+            description { state: "default" 0.0;
+               rel1.offset: -20 -20;
+               rel2.offset: 19 19;
+            }
+            description { state: "hidden" 0.0;
+               inherit: "default" 0.0;
+               visible: 0;
+            }
+         }
 			part { name: "bg";
 				mouse_events: 0;
 				description { state: "default" 0.0;
@@ -4686,6 +4697,7 @@ group { name: "e/pointer/enlightenment/rotate/color";
 				effect: SOFT_SHADOW;
 				mouse_events:  0;
 				scale: 1;
+            clip_to: "textmaster";
 				description { state: "default" 0.0;
 					align: 0.5 1.0;
 					fixed: 1 1;
@@ -4754,6 +4766,16 @@ group { name: "e/pointer/enlightenment/rotate/color";
 			}
 		}
 		programs {
+         program { name: "rename-on";
+            signal: "e,state,rename,on"; source: "e";
+            action: STATE_SET "hidden" 0.0;
+            target: "textmaster";
+         }
+         program { name: "rename-off";
+            signal: "e,state,rename,off"; source: "e";
+            action: STATE_SET "default" 0.0;
+            target: "textmaster";
+         }
 			program {
 				signal: "mouse,down,1"; source: "label_event";
 				script {
